@@ -92,7 +92,7 @@
 \author{M.R. Brown}
 \affiliation{Swarthmore College, Swarthmore, PA, USA}
 \author{V.S. Lukin}
-\affiliation{Space Science Division, Naval Research Laboratory, Washington, DC, USA}SA}
+\affiliation{Space Science Division, Naval Research Laboratory, Washington, DC, USA}
 
 \date{\today}
 \begin{abstract}
@@ -103,128 +103,67 @@ Variance anisotropy observed in magnetic fluctuations on the Swarthmore Spheroma
 
 \section{Introduction}
 
-The solar wind turbulence community has seen a flurry of results in recent years, as diagnostic capabilities on spacecraft have steadily improved, especially in the temporal resolution which has allowed for investigation into ion, sub-ion and electron scale turbulence measurements. In addition, newer analysis techniques have been developed to better tap the details of the rich turbulent environment that is the heliosphere. In particular, the focus on variance anisotropy---the observation of greater magnetic fluctuation power in components perpendicular to the mean magnetic field versus parallel---has garnered great interest as it is viewed as a keystone result for theoretical understanding of MHD turbulence. Anisotropy is a common theme in solar wind turbulence and is predicted to be present by many turbulence theories. Since the solar wind speeds are typically super-Alfvenic, anisotropy studies generally reference the velocity vector of the bulk flow when defining perpendicular versus parallel fluctuations. Variance anisotropy, however, references a mean magnetic field vector---either global or local mean.
+The solar wind turbulence community has seen a flurry of results in recent years, as diagnostic capabilities on spacecraft have steadily improved, especially in the temporal resolution which has allowed for investigation into ion, sub-ion and electron scale turbulence measurements. In addition, newer analysis techniques have been developed to better tap the details of the rich turbulent environment that is the heliosphere. 
+
+Theoretical treatments of magnetized plasma turbulence have almost universally predicted anisotropy to develop based on directions perpendicular and parallel to a mean field vector; many forms of this anisotropy has been predicted and observed (a good overview of the various types is given in Horbury 2012)~\cite{horbury12}. This paper focuses on variance anisotropy---the observation of greater magnetic fluctuation power in components perpendicular to the mean magnetic field versus parallel. From the experimentalist point of view, this is the most straightforward quantity to report and a reasonable place to begin. Analysis of other forms of anisotropy are saved for future work.---%has garnered great interest as it is viewed as a keystone result for theoretical understanding of MHD turbulence. 
+
+Anisotropy is a common theme in solar wind turbulence and is predicted to be present by many turbulence theories. Since the solar wind speeds are typically super-Alfvenic, anisotropy studies generally reference the velocity vector of the bulk flow when defining perpendicular versus parallel fluctuations. Variance anisotropy, however, references a mean magnetic field vector---either global or local mean.
 
 As results from space become more detailed, comparison to simulation and laboratory experiment become more useful in order to better develop the theory as well as inform future space missions. Experiments conducted in the MHD wind-tunnel configuration of the Swarthmore Spheromak Experiment have shown the ability to produce and analyze MHD turbulence using many of the same methods used in the space plasma community, and has produced turbulence measurements which are comparable to \textit{in-situ} results~\cite{schaffner14a}. Moreover, using varying amounts of helicity injection, some characteristics of the turbulence can be modified~\cite{schaffner14b}.
 
 A full spectral analysis of fluctuations in the SSX has been conducted, including magnetic field, density and Mach flow fluctuations. Using a wavelet transform method to decompose the timeseries signal, the magnetic field fluctuation spectra can be broken into portions that are parallel or perpendicular to the local magnetic field vector. Analysis of these portions show that parallel fluctuation power decreases slightly faster than that for perpendicular fluctuations generating a separating in power as a function of increasing frequency. This effect in frequency space is very close to the observation of variance anisotropy seen in wavenumber space in solar wind turbulence. The ratio is shown to grow from nearly isotropic levels in the energy injection scale to a maximum $\perp/\parallel$ ratio of 3 at frequencies of about 1MHz. Beyond this point, the ratio begins to contract reaching isotropy around 10MHz. Though the axial flow speeds of the plasma in the wind-tunnel sub-Mach, if a Taylor hypthesis were still invoked this peak in the ratio would correspond to the ion inertial scale length. Comparison between magnetic flucutation spectra and flow fluctuation spectra are also reported.
 
-The organization of this paper is as follows: First, a brief description of the plasma laboratory is given. Then, an overview of the analysis techniques used to determine perpendicular and parallel fluctuations is provided. The results of this analysis is provided in section 4 including how spectra scaling varies with helicity injection, and how it evolves in time. In section 5 a comparison of magnetic fluctuation spectra is made to velocity and density fluctuations as well a discussion of how all of these spectra results are consistant with the observation of an ion inertial scale in the plasma. Comparison to a MHD simulation is made in section 6 and conclusions are presented in section 7.
+The organization of this paper is as follows: First, a brief description of the plasma laboratory is given. Then, an overview of the analysis techniques used to determine perpendicular and parallel fluctuations is provided; details of the method and a second method used to verify its validity are described in the appendix. The results of this analysis is provided in section 4 including how spectra scaling varies with helicity injection, and how it evolves in time. In section 5 a comparison of magnetic fluctuation spectra is made to velocity and density fluctuations as well. Section 6 gives a discussion of how all of these spectra results are consistent with the observation of an ion inertial scale in the plasma. Comparison to a MHD simulation is made in section 7 and conclusions are presented in section 8.
 
-%\begin{figure}[!htbp]
-%\centerline{
-%\includegraphics[width=8.5cm]{helicity_scaling.png}}
-%\caption{\label{fig:helicity_scaling} (a) Average magnetic field magnitude over the equilibrium epoch (40-60$\mu s$), (b) injected gun energy and volume integrated magnetic field energy, and (c) amount of helicity injected in the first $20 \mu s$ after discharge trigger as a function of magnetic flux in gun core.}
-%\end{figure}
+\section{Experiment}
 
-\section{Theory and Techniques}
+The results center around three groupings of experimental parameters of 40 shots each enumerated by a stuffing flux value. The main run has a stuffing flux value of 1.0mWb. It has average field values of 5kG and average bulk flow of M=0.6. A second run has a value of 0.5mWb, and had average field values of 5kG, but a Mach number of only 0.2. A third run has zero stuffing flux, low field values, and flows of M=0.2.
 
-As noted above, the magnetic correlation function can be written
-%
-\begin{equation}
-R(r) =  \langle {\bf b(x) \cdot b(x + r)} \rangle
-\end{equation}
-%
-where {\bf b} is the fluctuating part of a turbulent magnetic field (${\bf B}(x, t) = {\bf B_0 + b}$)). 
+\section{Analysis Techniques}
 
-The magnetic Taylor microscale can be formally defined as
-%
-\begin{equation}
-\lambda_T^2 = \frac{\langle b^2 \rangle}{\langle (\nabla \times b)^2 \rangle}.
-\label{eq:tayscale}
-\end{equation}
-%
-This definition identifies the Taylor microscale as the scale associated with mean square spatial derivatives of the fluctuating magnetic field $b$.  It is at this scale that one would expect dissipation effects to become important, although actual dissipation likely occurs at smaller, kinetic scales ($k_D \lambda_T = R_m^{1/4}$) \cite{Matthaeus08}.  We expect that the Taylor microscale should be on the same order but larger than the Larmor scale ($\rho_i \approx 1~mm$ in the SSX wind tunnel) or the ion inertial scale ($c/\omega_{pi} \approx 5~mm$ in SSX).  A similar definition of the Taylor microscale in conventional fluids involves spatial derivatives of the fluctuating velocity field \cite{frisch95}.
+\section{Variance Anisotropy}
 
-The correlation scale can be evaluated
-%
-\begin{equation}
-\lambda_{CS}  = \frac{1}{\langle b^2 \rangle} \int_0^\infty R(r) dr
-\label{eq:tayscale2}
-\end{equation}
-%
-which is of the order of the system size (eg. the radius of the SSX wind tunnel).
-
-An equivalent formulation of the Taylor scale in terms of the spectrum is
-%
-\begin{equation}
-\frac{1}{\lambda_T^2}  = \int_0^\infty dk k^2 E(k)/\int_0^\infty dk E(k)
-\label{eq:tayscale3}
-\end{equation}
-%
-The correlation function can be approximated
-\begin{equation}
-R(r) \approx  \langle b^2 \rangle \left(1 - \frac{r^2}{2 \lambda_T^2}  \right)
-\label{eq:correlation2}  
-\end{equation}
-%
-We will fit our measured 16-point correlation function R(r) to this form in order to extract the Taylor microscale $\lambda_T$. 
-
-An effective turbulent magnetic Reynold's number can be written \cite{Batchelor70}
-%
-\begin{equation}
-R_m^{eff}  = \left(\frac{\lambda_{CS}}{\lambda_T} \right)^2
-\label{eq:magReynNum}
-\end{equation}
-%
-Note that the formal definition of the magnetic Reynolds number involves the plasma (Spitzer) conductivity
-\begin{equation}
-R_m = \mu_0 V \sigma_{SP} L.
-\label{eq:magReynNum2} 
-\end{equation}
-%
-Using $T_e = 10~eV$ for the SSX wind tunnel and the radius of the tunnel for the outer scale ($L = R = 0.078~m$), we calculate $R_m = 300$ for a flow speed of 50 km/s.
-
-The Fourier transform of the correlation function is the spatial energy spectrum, $E(k)$:
-%
-\begin{equation}
-E(k) = \frac{1}{2 \pi} \int_0^L e^{ikr} R(r) dr
-\label{eq:spectrum1}
-\end{equation}
-%
-We can compare a measurement of the energy spectrum $E(k)$ to the Fourier transform of the measured correlation function $R(r)$.
-
-\section{Experimental Apperatus}
+The magnetic field fluctuation spectra perpendicular and parallel to the local magnetic field vector is shown in figure~\cite{fig:spectra}(a) averaged over 40 shots and the inner four probe tips. Like previously reported magnetic spectra~\cite{schaffner14}, both perpendicular and parallel curves exhibit power-law like behavior for most frequencies between 10kHz and 10MHz. Fits can be made to various sections of the curve using a Maximum Likelihood Estimation method~\cite{clauset09}; the short fits show that the scaling appears to gradually change from spectral indices of about 1 in the injection (or outer) range and from about 2.5 to 5 in the remaining sections. As has been noted before, with the exception of the injection range slope, the inertial and possibly dissipation range spectral indices are steeper than observed in solar wind turbulence spectra.
 
 \begin{figure}[!htbp]
 \centerline{
-\includegraphics[width=8.5cm]{chamber.png}}
-\caption{\label{fig:chamber} Cross-section of SSX chamber in MHD wind-tunnel configuration}
+\includegraphics[width=8.5cm]{Bperppara_chan1t4_1mWbspectra_40t60us_wAsymRatio}}
+\caption{\label{fig:spectra}}
 \end{figure}
 
-\section{Results}
+However, the separation between perpendicular and parallel spectra proceed in a manner similar to that found in space. Both perpendicular fluctuations (red) and parallel fluctuations (blue) begin at roughly the same magnitude in power. Beyond 20kHz, though, the parallel curve dips down slightly faster than the perpendicular and this trend continues up to about 500kHz. Then the separation begins to decrease and approaches a constant value from 5MHz to the Nyquist limit of 32MHz. This gradual change as a function of frequency is more clearly observed in figure ~\ref{fig:spectra}(b) plotted in log-linear format, which provides the ratio of the two curves in figure~\ref{fig:specta}(a). Since the fluctuations perpendicular to the B-field have two component directions while parallel fluctuations have only one, the point of isotropy, or equal fluctuations in all three components) occurs when the ratio of perpendicular to parallel equal to 2. Isotropy is indicated in figure~\ref{fig:spectra}(b) by the dashed gray line.
+
+At the lowest frequencies, the balance of power actually tips toward parallel over perpendicular. As the frequency decreases, an thus, presumably, the scale size decreases, the ratio approaches isotropy, then changes over to a dominantly perpendicular power level. The ratio continues to steadily increase reaching a peak of about 3 at about 500kHz. There is a brief dip before the ratio rises again at about 1.5MHz; at this point, the ratio begins to drop steadily, and approaches an isotropic level at about 5MHz. 
+
+The scale dependency of the 1.0mWb data can be compared to other helicity levels. The black curve shows the anisotropy ratio for the zero helicity state, when the field strength is about an order of magnitude less, and there is much less structure to the field. As might be expected for such a state, there appear to be very little anisotropy at any scale with values staying close to R=2. The blue curve, showing the anisotropy ratio for a 0.5mWb stuffing case, clearly shows intermediate ratios between the 1.0 and 0.0mWb plasmas. This observation is somewhat curious as there is very little difference in magnetic field magnitude between 1.0mWb and 0.5mWb; the only difference between to the two states is the amount of average flow (which would not be expected to affect anisotropy) and the amount of helicity in the plasma.
 
 \begin{figure}[!htbp]
 \centerline{
-\includegraphics[width=8.5cm]{BrBtBz_correlations.png}}
-\caption{\label{fig:BrBtBz_correlations} Correlations Functions}
+\includegraphics[width=8.5cm]{Bperppara_chan1t4_1mWbspectra_40t60us_AsymRatio_wFit}}
+\caption{\label{fig:fitratio}}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centerline{
-\includegraphics[width=8.5cm]{figure3_placeholder.png}}
-\caption{\label{fig:figure3_placeholder} (a) Single vs Merging. (b) Expt vs Sim.}
+\includegraphics[width=8.5cm]{Bperppara_chan1t4_1mWbspectra_timescan}}
+\caption{\label{fig:timeratio}}
 \end{figure}
 
-\begin{figure}[!htbp]
-\centerline{
-\includegraphics[width=8.5cm]{figure4_placeholder.png}}
-\caption{\label{fig:figure4_placeholder} $Chi^{2}/n$ of parabolic fit versus n.}
-\end{figure}
+Fits to both the spectra and the ratio are shown in figure~\ref{fig:spectra}. In figure~\ref{fig:spectra}(a), fits are made to four sections of each curve. The spectral indices, error and range of fit for both parallel and perpendicular spectra are shown in the table below. Overall, the spectral indicies are anisotropy; for each section fit, the parallel slope is consistently steeper than the perpendicular slope. This difference is also reflected in the fit shown in figure~\ref{fig:fitratio}. An index of $\alpha = 0.35$ indicates that the ratio scales like $f^{1/3}$ for the region between 10kHz and 500kHz.
 
-\begin{table}
-\caption{\label{tab:Rms}Comparison of measured/computed Taylor Microscale and magnetic Reynolds numbers for various cases.}
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline
-Condition&$\lambda_{CS}$&$\lambda_{T}$&$R_{m}$ w/Radius&$R_{m}$ w/Int. Scale&$R_{m}$ Computed\\
-\hline
-Single-Outer&1&1&1&1&1\\
-Single-Inner&1&1&1&1&1\\
-Merging&1&1&1&1&1\\
-Simulation&1&1&1&1&1\\
-\hline
-\end{tabular}
-\end{table}
+An evolution of the anisotropy over time is also observed. Figure~\ref{fig:timeratio}(a) and (b) shows the change of the anisotropy ratio as a function of time ranges of 10$\mu s$ intervals(a) and 20$\mu s$ intervals(b). The black curve in figure~\ref{fig:timeratio} shows a period of time, 30-40$\mu s$, just as the plasma is reaching the midplane probe. The curve remains near isotropic levels for most of the frequencies. As time increases in 10$\mu s$ intervals, the perpendicular power clearly increases in the 100kHz to 1MHz range, while decreases in the 10-100kHz range. The actually peaks highest in the time frame just beyond the main analysis period shown in figure~\ref{fig:spectra}(b). These trends demonstrate that the anisotropy increases as more time is allowed for the turbulence to evolve. Figure~\ref{fig:timeratio}(b), shows that after energy is no longer being injected to maintain the turbulence, the anisotropy decreases. After 100$\mu s$, the magnetic field fluctuations have return to isotropy.
+
+\section{Flow and Density Spectra}
+
+\section{Discussion and Evidence for Ion Scale Effects}
+
+\section{Comparison with Simulation}
+
+\section{Conclusions}
+
+\appendix
+
+\section{Computation of Variance Anisotropy}
 
 % ----------------------------------------------------------------
 \section*{Acknowledgements}
@@ -233,9 +172,13 @@ Simulation&1&1&1&1&1\\
 \section*{References}
 \begin{thebibliography}{99}
 
+\bibitem{horbury12} T.S. Horbury, R.T. Wicks, C.H.K. Chen Anisotropy in Space Plasma Turbulence: Solar Wind Observations. Space Sci Rev. {\bf 172} 325-342 (2012).
+
 \bibitem{schaffner14a} D.A. Schaffner {\it et al.} Turbulence analysis of an experimental flux rope plasma. Accepted by Plas. Phys. Cont. Fusion. Dec 2013.
 
 \bibitem{schaffner14b} D.A. Schaffner {\it et al.} Observation of turbulent intermittency scaling with magnetic helicity in an MHD plasma wind-tunnel. Submitted to PRL? Feb 2014.
+
+\bibitem{clauset09}A. Clauset, C. Rohilla Shalizi, M.E.J. Newman, Power-law distributions in empirical data, SIAM Rev. {\bf 51}, 661703 (2009).
 
 %\bibitem{Belmabrouk98} Belmabrouk, H., and M. Michard (1998), Taylor length scale measurement by laser Doppler velocimetry, Exp. Fluids, 25, 69Ð76.
 
@@ -279,7 +222,7 @@ Simulation&1&1&1&1&1\\
 
 %\bibitem{torrence98}C. Torrence, G.P. Compo, A practical guide to wavelet analysis. Bull. Am. Meteorol. Soc. {\bf 79}, 6178 (1998).
 
-%\bibitem{clauset09}A. Clauset, C. Rohilla Shalizi, M.E.J. Newman, Power-law distributions in empirical data, SIAM Rev. {\bf 51}, 661703 (2009).
+
 
 %\bibitem{wan12}M. Wan, K. T. Osman, W. H. Matthaeus, and S. Oughton, Investigation of intermittency in magnetohydrodynamics and solar wind turbulence: scale-dependent kurtosis, ApJ {\bf 744}, 171 (2012).
 
