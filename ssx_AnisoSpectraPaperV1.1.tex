@@ -109,7 +109,7 @@ Theoretical treatments of magnetized plasma turbulence have almost universally p
 
 Anisotropy is a common theme in solar wind turbulence and is predicted to be present by many turbulence theories. Since the solar wind speeds are typically super-Alfvenic, anisotropy studies generally reference the velocity vector of the bulk flow when defining perpendicular versus parallel fluctuations. Variance anisotropy, however, references a mean magnetic field vector---either global or local mean.
 
-As results from space become more detailed, comparison to simulation and laboratory experiment become more useful in order to better develop the theory as well as inform future space missions. Experiments conducted in the MHD wind-tunnel configuration of the Swarthmore Spheromak Experiment have shown the ability to produce and analyze MHD turbulence using many of the same methods used in the space plasma community, and has produced turbulence measurements which are comparable to \textit{in-situ} results~\cite{schaffner14a}. Moreover, using varying amounts of helicity injection, some characteristics of the turbulence can be modified~\cite{schaffner14b}.
+As results from space become more detailed, comparison to simulation and laboratory experiment become more useful in order to better develop the theory as well as inform future space missions. Much progress has been made to develop laboratory experiment which can inform space plasma research~\cite{howes12a} as well as begin to make turbulence measurements~\cite{ren11}.  Experiments conducted in the MHD wind-tunnel configuration of the Swarthmore Spheromak Experiment have shown the ability to produce and analyze MHD turbulence using many of the same methods used in the space plasma community, and has produced turbulence measurements which are comparable to \textit{in-situ} results~\cite{schaffner14a}. Moreover, using varying amounts of helicity injection, some characteristics of the turbulence can be modified~\cite{schaffner14b}.
 
 A full spectral analysis of fluctuations in the SSX has been conducted, including magnetic field, density and Mach flow fluctuations. Using a wavelet transform method to decompose the timeseries signal, the magnetic field fluctuation spectra can be broken into portions that are parallel or perpendicular to the local magnetic field vector. Analysis of these portions show that parallel fluctuation power decreases slightly faster than that for perpendicular fluctuations generating a separating in power as a function of increasing frequency. This effect in frequency space is very close to the observation of variance anisotropy seen in wavenumber space in solar wind turbulence. The ratio is shown to grow from nearly isotropic levels in the energy injection scale to a maximum $\perp/\parallel$ ratio of 3 at frequencies of about 1MHz. Beyond this point, the ratio begins to contract reaching isotropy around 10MHz. Though the axial flow speeds of the plasma in the wind-tunnel sub-Mach, if a Taylor hypthesis were still invoked this peak in the ratio would correspond to the ion inertial scale length. Comparison between magnetic flucutation spectra and flow fluctuation spectra are also reported.
 
@@ -155,6 +155,56 @@ An evolution of the anisotropy over time is also observed. Figure~\ref{fig:timer
 
 \section{Flow and Density Spectra}
 
+For a turbulence cascade to develop, a system needs both energy injection and energy dissipation. The separation of spatial scale between injection and dissipation determines the size of the inertial range. While the actual injection mechanisms of the solar wind are not completely understood, there is evidence from the comparison of large scale magnetic field and velocity fluctuation data that velocity fluctuation energy is being tapped by magnetic fluctuations to sustain an injection-range like cascade for magnetic spectra~\cite{roberts10}. In the SSX plasma, however, the injection scale energy is primarily magnetic---the formation of the unstable spheromaks. This is borne out by similar comparisons of magnetic spectra and velocity spectra. Figure~\ref{fig:BvsFlow} shows magnetic spectra (a) and Mach number fluctuation spectra (b) for two plasma states: a high and low magnetization state.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{BvsFlowspec_2fluxes_separateplots_40t60us}}
+\caption{\label{fig:BvsFlow}}
+\end{figure}
+
+Comparison of the blue and purple curves in Figure~\ref{fig:BvsFlow}(a) show the affect on large scale fluctuations from the presense of a strong initial magnetic field. Comparing these states with the respective velocity fluctuations shows how the additional magnetic energy injection at larger scales affects the velocity. For the low field state, the velocity cascade is immediately steep as well as lower in energy overall. In the high field state, however, the velocity fluctuation scaling is shallower, but then has a breakpoint around the frequency where B-field fluctuation energy is about the same between high and low field states. This suggests that the state with more injected magnetic energy delivers some of its energy to the velocity fluctuations.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{BvsFlowspec_wFits_40t60us}}
+\caption{\label{fig:BvsFlow_wFits}}
+\end{figure}
+
+This can be seen quantitatively in Figure~\ref{fig:BvsFlow_wFits} which puts the high field magnetic and velocity fluctuation spectra on the same relative scale. The velocity spectra scales like $f^{-1}$ about to about 200kHz, a scaling which is typical for injection range turbulence. Meanwhile, the magnetic spectra is steeper, which implies that some of the magnetic energy may be going to drive flows, though the exact mechanism of this energy transfer is not known and its study is reserved for later work.
+
+Beyond 200kHz, the velocity fluctuations scaling steepens suggesting an inertial range scale. The B-field steepens further as well. Beyond, 2MHz, the B-field scaling drops off significantly while the velocity spectra scaling actually slightly increases. This is likely due to a dissipation mechanism that may be further tapping magnetic energy, and given the increase in velocity spectra scaling, even further adding to velocity fluctuation energy.
+
+\section{Wavenumber Spectra}
+
+A unique turbulence measurement that can be made in the SSX plasma is a direct wavenumber spectrum using a multi-tipped magnetic probe that is inserted radially into the wind-tunnel. The probe can measure $\vec{B}(t)$ at 16 locations along a 6.8cm length of the radius at a spacing of 0.4572cm. In Fourier space, this allows measurements of scales from about 7cm to 1cm. Given that the injection scale of the magnetic energy is on the order of the initial size of the spheromaks---15.5cm---and a dissipation scale can be estimated to be just under 1cm---ion inertial length for a 1.5$\times 10^{15}$cm$^{-3}$ plasma is on the order of 0.6cm---the spatial range sampled by the probe can be assumed to be in the inertial range.
+
+Since the probe can take simultaneous measurements of $\vec{B}$ across the plasma, snapshots of the spatial structure of the plasma can be made at each time step. In turn, these spatial distributions can be Fourier transformed to produced power-spectra of the scales. Thus, this measurement can capture the direct wavenumber spectra of the plasma turbulence without reliance on any Doppler shifting as is needed to invoke the Taylor Hypothesis. Moreover, since $\vec{B}$ is constructed from three orthogonal measurements, the power-spectra of vectors perpendicular and parallel to the axial flow of the plasma can be separately analyzed. 
+
+The downside, of course, to a measurement of the wavenumber spectra in this way is the lack of resolution compared to a Doppler-shifted frequency spectrum. With only 16 spatial points, the Fourier spectrum can have only 8 points, and only seven can be displayed in log-log format. However, despite this lack of resolution, it is a more physical direct measurement and can the measurement can still be used to cross-reference other observations of spectra.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Bmod_FFTwavenumberspectra_wFits_40t60us}}
+\caption{\label{fig:wavenumber_spectra}}
+\end{figure}
+
+Figure~\ref{fig:wavenumber_spectra} shows the wavenumber power spectrum for three different helicity states and for full-vector(a), perpendicular vector(b) and parallel vector(c), averaged for each timestep in between 40 and 60$\mu s$ and over 40 shots. Comparison of the three curves in Figure~\ref{fig:wavenumber_spectra}(a) seem to show a slight variation in slope as the helicity state is increased, though with the large given errors in the fit (due to low resolution), the slopes of all three curves are essentially the same. A similar trend is observed amongst the three curves in (b) and (c) as well. A larger difference arises when comparing the curves of different vectors. Namely, the separately computed perpendicular and parallel spectra in (b) and (c) tend to be slightly steeper than the full vector spectra in (a). Moreover, the parallel curves appear to be steeper than the perpendicular curves. Again, the error in the fits are large for the low resolution data, but the trends are very suggestive.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{B_spatial_temporal_comp_wFits_40t60us}}
+\caption{\label{fig:wavenumber_comp}}
+\end{figure}
+
+The wavenumber spectra and frequency spectra can be directly compared by invoking the Taylor hypothesis for the frequency spectra and Doppler-shifting the frequency spectra by the bulk plasma velocity,
+\begin{equation}
+B(f) \longrightarrow B(f-kV_{p}) \longrightarrow \frac{1}{V_{p}}B(k)
+\label{eq:Taylor_Hyp}
+\end{equation}
+
+For this plasma, the velocity can be estimated (using both time-of-flight and Mach probe measurements) to be about 20km/s. If the frequency portion is ignored in Equation~\ref{eq:Taylor_Hyp}, the frequency spectra can be plotted on the same scale as the wavenumber spectra. Figure~\ref{fig:wavenumber_comp} shows this comparison for the 1mWb stuffing flux plasma. The curves are placed arbitrarily on the y-axis. Maximum likelihood estimation power-law fits are made to the same range in both curves. The slopes of the curves are comparable suggesting that invoking the Taylor hypothesis for the frequency spectra is not entirely unwarrented. Instead, the steeper slope of the frequency spectra could be reflective of the effect of a combined temporal {\it and} spatial scaling, which the direct wavenumber spectrum does not include.
+
 \section{Discussion and Evidence for Ion Scale Effects}
 
 \section{Comparison with Simulation}
@@ -172,13 +222,19 @@ An evolution of the anisotropy over time is also observed. Figure~\ref{fig:timer
 \section*{References}
 \begin{thebibliography}{99}
 
-\bibitem{horbury12} T.S. Horbury, R.T. Wicks, C.H.K. Chen Anisotropy in Space Plasma Turbulence: Solar Wind Observations. Space Sci Rev. {\bf 172} 325-342 (2012).
+\bibitem{horbury12} T.S. Horbury, R.T. Wicks, C.H.K. Chen. Anisotropy in Space Plasma Turbulence: Solar Wind Observations. Space Sci Rev. {\bf 172} 325-342 (2012).
+
+\bibitem{howes12a} G.G. Howes, D.J. Drake, K.D. Nielson, T.A. Carter, C.A. Kletzing and F. Skiff. Toward Astrophysical Turbulence in the Laboratory. Phys. Rev. Lett. {\bf 109} 255001 (2012).
+
+\bibitem{ren11} Y. Ren, A.F. Almagri, G. Fiksel, S.C. Prager, J.S. Sarff and P.W. Terry. Experimental Observation of Anisotropic Magnetic Turbulence in a Reversed Field Pinch Plasma. Phys. Rev. Lett. {\bf 107} 195002 (2011).
 
 \bibitem{schaffner14a} D.A. Schaffner {\it et al.} Turbulence analysis of an experimental flux rope plasma. Accepted by Plas. Phys. Cont. Fusion. Dec 2013.
 
 \bibitem{schaffner14b} D.A. Schaffner {\it et al.} Observation of turbulent intermittency scaling with magnetic helicity in an MHD plasma wind-tunnel. Submitted to PRL? Feb 2014.
 
 \bibitem{clauset09}A. Clauset, C. Rohilla Shalizi, M.E.J. Newman, Power-law distributions in empirical data, SIAM Rev. {\bf 51}, 661703 (2009).
+
+\bibitem{roberts10}D. Aaron Roberts. Evolution of the spectrum of solar wind velocity fluctuations from 0.3 to 5 AU. JGR. {\bf 115}, A12 (2010).
 
 %\bibitem{Belmabrouk98} Belmabrouk, H., and M. Michard (1998), Taylor length scale measurement by laser Doppler velocimetry, Exp. Fluids, 25, 69Ð76.
 
