@@ -114,7 +114,6 @@ As results from space become more detailed, comparison to simulation and laborat
 A full spectral analysis of fluctuations in the SSX has been conducted, including magnetic field, density and Mach flow fluctuations. Using a wavelet transform method to decompose the timeseries signal, the magnetic field fluctuation spectra can be broken into portions that are parallel or perpendicular to the local magnetic field vector. Analysis of these portions show that parallel fluctuation power decreases slightly faster than that for perpendicular fluctuations generating a separating in power as a function of increasing frequency. This effect in frequency space is very close to the observation of variance anisotropy seen in wavenumber space in solar wind turbulence. The ratio is shown to grow from nearly isotropic levels in the energy injection scale to a maximum $\perp/\parallel$ ratio of 3 at frequencies of about 1MHz. Beyond this point, the ratio begins to contract reaching isotropy around 10MHz. Though the axial flow speeds of the plasma in the wind-tunnel sub-Mach, if a Taylor hypthesis were still invoked this peak in the ratio would correspond to the ion inertial scale length. Comparison between magnetic flucutation spectra and flow fluctuation spectra are also reported.
 
 The organization of this paper is as follows: First, a brief description of the plasma laboratory is given. Then, an overview of the analysis techniques used to determine perpendicular and parallel fluctuations is provided; details of the method and a second method used to verify its validity are described in the appendix. The results of this analysis is provided in section 4 including how spectra scaling varies with helicity injection, and how it evolves in time. In section 5 a comparison of magnetic fluctuation spectra is made to velocity and density fluctuations as well. Section 6 gives a discussion of how all of these spectra results are consistent with the observation of an ion inertial scale in the plasma. Comparison to a MHD simulation is made in section 7 and conclusions are presented in section 8.
-
 \section{Experiment}
 
 The results center around three groupings of experimental parameters of 40 shots each enumerated by a stuffing flux value. The main run has a stuffing flux value of 1.0mWb. It has average field values of 5kG and average bulk flow of M=0.6. A second run has a value of 0.5mWb, and had average field values of 5kG, but a Mach number of only 0.2. A third run has zero stuffing flux, low field values, and flows of M=0.2.
@@ -214,6 +213,41 @@ For this plasma, the velocity can be estimated (using both time-of-flight and Ma
 \appendix
 
 \section{Computation of Variance Anisotropy}
+
+The computation of the variance anisotropy involves two main steps: a determination of fluctuation power and an estimate of the distribution of the fluctuation power relative to a vector direction. The first step is accomplished using a Wavelet transform procedure as is discussed in the text. The division of fluctuation power is accomplished using what will be described here as a projection method. A second estimate of fluctuation power distribution is constructed using a threshold method and is also described in detail in this appendix. The threshold method is a more straightforward process for determining the level of variance anisotropy, but suffers from diminishing resolution. Its presentation here is mainly as a validation of the eventual use of the projection method for the analysis in the paper. 
+
+\subsection{Threshold Method}
+
+Both the threshold method and the projection method for determining variance anisotropy rely on the ability of the wavelet transform to yield a power spectrum distribution (PSD) as a function of both time and frequency (i.e. B(f,t)). A local (in time) vector $\vec{B}$ is determined for each time, t,
+\begin{equation}
+\vec{B}(t) = B_{r}(t)\hat{r} + B_{\theta}(t)\hat{\theta} + B_{z}(t)\hat{z}
+\label{eq:Bvector}
+\end{equation}
+where each component $n=r,\theta,z$ is determined from $\dot{B}_{n}$ by integrating over time as
+\begin{equation}
+B_{n}(t) = \int_{0}^{t} \frac{d}{d\tau}B_{n}(\tau)d\tau.
+\label{eq:Bintegrated}
+\end{equation}
+
+Since the magnetic probe measures orthogonal magnetic field directions by construction, this fact can be used to directly seek a difference in fluctuation spectra depending on orientation perpendicular or parallel to the overall field. Thus, a threshold magnitude for each component can be defined as a fraction of the total magnitude as in,
+\begin{equation}
+B_{n}^{threshold} \geq \frac{|B_{n}|^{2}}{|\vec{B}|^{2}}
+\label{eq:Bthreshold}
+\end{equation}
+which reflects the relative amount that the total vector points in one of the three orthogonal directions. Then for every time, t, in a given time range and for each shot, the quantity $B_{n}(f,t)$ is summed for each t where
+\begin{equation}
+\frac{|B_{n}|^{2}}{|\vec{B}|^{2}} \geq B_{n}^{threshold}
+\label{eq:Bcondition}
+\end{equation}
+for all frequencies, $f$. The value chosen for $B_{n}^{threshold}$ determines how strictly total vector aligns with the component, $n$. By definition, then, the summed power for $B_{n}$ is considered the parallel component and the sum of the remaining two directions is the perpendicular component. If there is any anisotropy in the signal, a difference in energy content of the spectra should become apparent as the threshold value is increased.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Bperppara_spectra_thresholdscan40t60us}}
+\caption{\label{fig:thresholdmethod}}
+\end{figure}
+
+Indeed, an effect like this is observed. Figure~\ref{fig:thresholdmethod} shows the ratio of total perpendicular fluctuation power to parallel fluctuation power for $n = r$(a) and $n = \theta$(b). The threshold fraction is indicated by color. The dashed line at 2 represents isotropy---where the sum of 2 perpendicular components is about twice the power of the single parallel component. Clearly, for the lowest threshold value, the ratio remains close to the isotropy line for all frequencies as would be expected. As the threshold value is raised, the ratio from about 10kHz and higher begins to grow. This shows there is variance anisotropy in the plasma. If the plasma were isotropic, a difference between perpendicular and parallel spectra would not be seen. The anisotropy ratio reaches a maximum as the threshold nears 100\%. The drawback to this method, however, is that as the threshold is increased, the number of individual spectra summed is reduced which increases the error of each curve.
 
 % ----------------------------------------------------------------
 \section*{Acknowledgements}
