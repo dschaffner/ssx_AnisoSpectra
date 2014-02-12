@@ -205,9 +205,51 @@ B(f) \longrightarrow B(f-kV_{p}) \longrightarrow \frac{1}{V_{p}}B(k)
 
 For this plasma, the velocity can be estimated (using both time-of-flight and Mach probe measurements) to be about 20km/s. If the frequency portion is ignored in Equation~\ref{eq:Taylor_Hyp}, the frequency spectra can be plotted on the same scale as the wavenumber spectra. Figure~\ref{fig:wavenumber_comp} shows this comparison for the 1mWb stuffing flux plasma. The curves are placed arbitrarily on the y-axis. Maximum likelihood estimation power-law fits are made to the same range in both curves. The slopes of the curves are comparable suggesting that invoking the Taylor hypothesis for the frequency spectra is not entirely unwarrented. Instead, the steeper slope of the frequency spectra could be reflective of the effect of a combined temporal {\it and} spatial scaling, which the direct wavenumber spectrum does not include.
 
+\section{Comparison with Simulation}
+
+Simulations of the plasma produced in the SSX wind-tunnel have been generated with the HiFi spectral-element multi-fluid modeling framework using a set of normalized compressible Hall-MHD equations. Favorable comparisons of turbulent spectra and intermittency have been reported between these simulations and the experimental plasma~\cite{schaffner14a}. Further analysis is presented here which show similar observations of anisotropy, wavenumber spectra, and velocity-B-field spectra comparisons as is seen in the experiment.
+
+Timeseries of quantities in 3mm spheres approximately 1cm off the central axis and at the midplane are extracted from the simulation for density, three axes of magnetic field, three axes of velocity. To provide some ensemble averaging, points at eight different azimuthal angles are used.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Anisotropy_simulation_comparison}}
+\caption{\label{fig:aniso_comp}}
+\end{figure}
+
+The simulation timeseries data is analyzed in a similar was the the experimental data with the exception that the mother wavelet used for the wavelet transform of the simulation data is a fourth-order Paul rather than a sixth-order Morlet, in order to better capture time resolution for the lesser sampled simulation. A variance anisotropy analysis is conducted in the same manner as well using a local magnetic field and the projection method. Figure~\ref{fig:aniso_comp}(a) shows simulation decomposition into perpendicular and parallel spectra compared to experimental spectra using the 1.0mWb stuffing data. The simulation and experimental spectra are staggered placed on the y-axis to emphasize features of the shape. Clearly, the simulation data exhibits growing variance anisotropy with increasing frequency. The slopes of the simulation spectra match qualitatively well in the region of 100kHz to 1MHz, though the fit spectra indices indicate a slightly steeper slope than the experiment. The high frequency end of the simulation spectra drops in power faster than the experiment, likely due to the limits in time resolution.
+
+The trend in anisotropy ratio is also similar in the simulation and the experiment, as seen in Figure~\ref{fig:aniso_comp}(b), though the simulation does not reach as large a peak ratio, nor does it scale at quite the same rate. Nevertheless, the clear observation of increase an increase in ratio suggests that the compressible Hall-MHD physics captures the generation of the anisotropy. Figure~\ref{fig:aniso_comp}(b) also shows the anisotropy ratio for a simulation run with the Hall term in the compressible MHD equations set to zero. Unlike the Hall MHD and the experiment, the ratio does not switch over to perpendicular dominance, and instead stays near or below the isotropy line. The implications of this have not been analyzed in depth.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{BfieldFlow_simulation_comparison}}
+\caption{\label{fig:bflow_comp}}
+\end{figure}
+
+A comparison between velocity and magnetic field fluctuations in the simulation can also be made. Figure~\ref{fig:bflow_comp} shows wavelet transformed frequency power spectra for the total magnetic field (sum of $B_{r}$, $B_{\theta}$, and $B_{z}$), total velocity, and density, all normalized to their respective peaks. Qualitatively, the comparison between velocity and magnetic field spectra supports the results of the experimental data for stuffed plasmas: the peak in the velocity spectra occurs at a larger frequency than the magnetic spectra. This suggests that energy for the velocity fluctuations are being injected at a smaller scale than the magnetic field fluctuations. Though not conducted here, further analysis of the simulation could potentially show direct energy transfer between the magnetic and velocity fluctuations.
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Bmod_FFTwavenumberspectra_wFits_40t60us_simulationcomparison}}
+\caption{\label{fig:sim_wavenumber_comp}}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{Simulation_spatial_temporal_spectra_comparision}}
+\caption{\label{fig:sim_spatial_comp}}
+\end{figure}
+
+The wavenumber spectra from a radial cut of the simulation data is also generated using 24 points. Figure~\ref{fig:sim_wavenumber_comp} shows a direct comparison between simulation and experimental wavenumber spectra. The slightly smaller separation between distances allows the simulation to reach a smaller scale than the experiment, to about 0.7cm. In general, the comparison between simulation and experiment is good suggesting that the simulation is capturing well the spatial structure of the turbulence. Even though the simulation can observe slightly smaller scales, it does not appear to probe small enough to exhibit any dissipation effects at to ion inertial length scales which for the simulation is at about 0.7cm.
+
+Like in the experiment, the spatial and temporal spectra of the simulation is compared and shown in Figure~\ref{fig:sim_spatial_comp}. The simulation has a bulk axial flow of 18km/s, close to the 20km/s observed in the experiment. A similar trend is seen with the spatial spectra having a shallower slope than the Doppler-shifted frequency spectra. The main difference again appears to be that the frequency spectra hits the limits of the temporal resolution at larger frequencies than the experiment.
+
+These further comparisons of turbulent statistics and characteristics between the experimental plasma and a compressible Hall-MHD simulation help validate the model as useful for understanding the physical processes. Subsequent simulation analysis will likely entail more detailed computation of how energy might be being distributed and moved through the plasma including relationships between magnetic field and velocity as well as between magnetic fluctuations perpendicular and parallel to a local B-field.
+
 \section{Discussion and Evidence for Ion Scale Effects}
 
-\section{Comparison with Simulation}
+A major remaining question for this analysis is whether the plasma diagnostics are able to observe effects of a dissipation scale in this turbulence. Perhaps, a more general question can be posed in how well does this plasma exhibit a traditional fluid-turbulence-like picture which posits an injection scale, inertial scale and dissipation scale.
 
 \section{Conclusions}
 
@@ -301,7 +343,7 @@ The use of a temporally local versus global magnetic field in anisotropy analysi
 
 \bibitem{ren11} Y. Ren, A.F. Almagri, G. Fiksel, S.C. Prager, J.S. Sarff and P.W. Terry. Experimental Observation of Anisotropic Magnetic Turbulence in a Reversed Field Pinch Plasma. Phys. Rev. Lett. {\bf 107} 195002 (2011).
 
-\bibitem{schaffner14a} D.A. Schaffner {\it et al.} Turbulence analysis of an experimental flux rope plasma. Accepted by Plas. Phys. Cont. Fusion. Dec 2013.
+\bibitem{schaffner14a} D.A. Schaffner {\it et al.} Turbulence analysis of an experimental flux rope plasma. {\bf 56} 064003 (2014).
 
 \bibitem{schaffner14b} D.A. Schaffner {\it et al.} Observation of turbulent intermittency scaling with magnetic helicity in an MHD plasma wind-tunnel. Submitted to PRL? Feb 2014.
 
