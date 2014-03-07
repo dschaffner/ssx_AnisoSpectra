@@ -173,7 +173,7 @@ Comparison of the blue and purple curves in Figure~\ref{fig:BvsFlow}(a) show the
 
 This can be seen quantitatively in Figure~\ref{fig:BvsFlow_wFits} which puts the high field magnetic and velocity fluctuation spectra on the same relative scale. The velocity spectra scales like $f^{-1}$ about to about 200kHz, a scaling which is typical for injection range turbulence. Meanwhile, the magnetic spectra is steeper, which implies that some of the magnetic energy may be going to drive flows, though the exact mechanism of this energy transfer is not known and its study is reserved for later work.
 
-Beyond 200kHz, the velocity fluctuations scaling steepens suggesting an inertial range scale. The B-field steepens further as well. Beyond, 2MHz, the B-field scaling drops off significantly while the velocity spectra scaling actually slightly increases. This is likely due to a dissipation mechanism that may be further tapping magnetic energy, and given the increase in velocity spectra scaling, even further adding to velocity fluctuation energy.
+Beyond 200kHz, the velocity fluctuations scaling steepens suggesting an inertial range scale. The B-field steepens further as well. Beyond, 2MHz, the B-field scaling drops off significantly while the velocity spectra scaling actually slightly increases. This is possibly due to a dissipation mechanism that may be further tapping magnetic energy, and given the increase in velocity spectra scaling, even further adding to velocity fluctuation energy. It may, however, also be due to the frequency of response of the Mach probe itself. Alternative velocity fluctuation measurements are being considered (i.e. electric field fluctuations) for future runs for comparison.
 
 \section{Wavenumber Spectra}
 
@@ -203,7 +203,7 @@ B(f) \longrightarrow B(f-kV_{p}) \longrightarrow \frac{1}{V_{p}}B(k)
 \label{eq:Taylor_Hyp}
 \end{equation}
 
-For this plasma, the velocity can be estimated (using both time-of-flight and Mach probe measurements) to be about 20km/s. If the frequency portion is ignored in Equation~\ref{eq:Taylor_Hyp}, the frequency spectra can be plotted on the same scale as the wavenumber spectra. Figure~\ref{fig:wavenumber_comp} shows this comparison for the 1mWb stuffing flux plasma. The curves are placed arbitrarily on the y-axis. Maximum likelihood estimation power-law fits are made to the same range in both curves. The slopes of the curves are comparable suggesting that invoking the Taylor hypothesis for the frequency spectra is not entirely unwarrented. Instead, the steeper slope of the frequency spectra could be reflective of the effect of a combined temporal {\it and} spatial scaling, which the direct wavenumber spectrum does not include.
+For this plasma, the velocity can be estimated (using both time-of-flight and Mach probe measurements) to be about 20km/s. If the frequency portion is ignored in Equation~\ref{eq:Taylor_Hyp}, the frequency spectra can be plotted on the same scale as the wavenumber spectra. Figure~\ref{fig:wavenumber_comp} shows this comparison for the 1mWb stuffing flux plasma. The curves are placed arbitrarily on the y-axis. Maximum likelihood estimation power-law fits are made to the same range in both curves. The slopes of the curves are comparable suggesting that invoking the Taylor hypothesis for the frequency spectra is not entirely unwarrented. Instead, the steeper slope of the frequency spectra could be reflective of the effect of a combined temporal {\it and} spatial scaling, which the direct wavenumber spectrum does not include. However, breakdown of Taylor Hypothesis has been shown to make the spectra more shallow than steeper(Klein Taylor Hypotheis draft). The differences might also be reflective of a wavenumber anisotropy as the direct wavenumber spectra probes $k_{r}$ and the Doppler-shifted frequency spectra probes $k_{z}$.
 
 \section{Comparison with Simulation}
 
@@ -248,6 +248,77 @@ Like in the experiment, the spatial and temporal spectra of the simulation is co
 These further comparisons of turbulent statistics and characteristics between the experimental plasma and a compressible Hall-MHD simulation help validate the model as useful for understanding the physical processes. Subsequent simulation analysis will likely entail more detailed computation of how energy might be being distributed and moved through the plasma including relationships between magnetic field and velocity as well as between magnetic fluctuations perpendicular and parallel to a local B-field.
 
 \section{Discussion and Evidence for Ion Scale Effects}
+
+\begin{figure}[!htbp]
+\centerline{
+\includegraphics[width=8.5cm]{BvsDensvsFlowspec_1mWb_and_0mWbcomp_40t60us}}
+\caption{\label{fig:BMD_comp}}
+\end{figure}
+
+%1mWB run
+%dens 1.39e15 cm^-3
+%bfield 5283 G
+%Ti = 23 eV
+%bulk flow = 20km/s
+
+%results
+%Va = 309km/s
+%Beta = 0.07
+%Cs = 31km/s
+%f_i = 8MHz
+%nu_i = 6MHz
+%rho_i = 0.09cm
+%c/w_pi = 0.61cm
+%ion_mfp = 0.16cm
+%doppler shifted c/wpi = 3MHz
+%doppler shifted rho_i = 20MHz
+
+%0mWb run
+%dens 2.84e15 cm^-3
+%bfield 747 G
+%Ti = 17 eV
+%bulk flow = 20km/s
+
+%results
+%Va = 30km/s
+%Beta = 5.5
+%Cs = 31km/s
+%f_i = 1.1MHz
+%nu_i = 19MHz
+%rho_i = 0.56cm
+%c/w_pi = 0.43cm
+%ion_mfp = 0.05cm
+%doppler shifted c/wpi = 4.3MHz
+%doppler shifted rho_i = 3.3MHz
+
+\begin{table}
+\caption{\label{tab:params}MHD wind tunnel plasma parameters during the equilibrium epoch for the present configuration of SSX.}
+\begin{tabular}{|l|l|l|}
+\hline
+Parameter&1.0mWb&0.0mWb\\
+\hline
+$Measured$&&\\
+\hline
+$\langle |B|\rangle [kG]$&5.283&0.747\\
+$\langle n\rangle \times 10^{15} [cm^{-3}]$&1.39&2.84\\
+$\langle T_{i}\rangle [eV]$&23&17\\
+Bulk Flow $[km/s]$&20&20\\
+\hline
+$Computed$&&\\
+\hline
+$\beta$&0.07&5.5\\
+$V_{a} [km/s]$&309&30\\
+$C_{s} [km/s]$&31&31\\
+$\rho_{i} [cm]$&0.09&0.56\\
+$\delta_{i} [cm]$&0.61&0.43\\
+$\lambda_mfp^{i} [cm]$&0.16&0.05\\
+$f_{ci} [MHz]$&8&1.1\\
+$\nu_{i} [MHz]$&6&19\\
+$f_{\delta i} [MHz]$&3&4.3\\
+$f_{\rho i} [MHz]$&20&3.3\\
+\hline
+\end{tabular}
+\end{table}
 
 A major remaining question for this analysis is whether the plasma diagnostics are able to observe effects of a dissipation scale in this turbulence. Perhaps, a more general question can be posed in how well does this plasma exhibit a traditional fluid-turbulence-like picture which posits an injection scale, inertial scale and dissipation scale.
 
