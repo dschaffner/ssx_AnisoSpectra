@@ -115,7 +115,7 @@ Comparison amongst fluctuation spectra (typically magnetic, flow, and density fl
 
 As results from space become more detailed, comparison to simulation and laboratory experiment become more useful in order to better develop the theory as well as inform future space missions. Much progress has been made to develop laboratory experiment which can inform space plasma research~\cite{howes12a} as well as begin to make turbulence measurements~\cite{ren11}.  Experiments conducted in the MHD wind-tunnel configuration of the Swarthmore Spheromak Experiment have shown the ability to produce and analyze MHD turbulence using many of the same methods used in the space plasma community, and has produced turbulence measurements which are comparable to \textit{in-situ} results~\cite{schaffner14a}. Moreover, using varying amounts of helicity injection, some characteristics of the turbulence can be modified~\cite{schaffner14b}.
 
-A full spectral analysis of fluctuations in the SSX has been conducted, including magnetic field, density and Mach flow fluctuations. Using a wavelet transform method to decompose the timeseries signal, the magnetic field fluctuation spectra can be broken into portions that are parallel or perpendicular to the local magnetic field vector. Analysis of these portions show that parallel fluctuation power decreases slightly faster than that for perpendicular fluctuations generating a separating in power as a function of increasing frequency. This effect in frequency space is very close to the observation of variance anisotropy seen in wavenumber space in solar wind turbulence. The ratio is shown to grow from nearly isotropic levels in the energy injection scale to a maximum $\perp/\parallel$ ratio of 3 at frequencies of about 1MHz. Beyond this point, the ratio begins to contract reaching isotropy around 10MHz. Though the axial flow speeds of the plasma in the wind-tunnel sub-Mach, if a Taylor hypothesis were still invoked this peak in the ratio would correspond to the ion inertial scale length. 
+A full spectral analysis of fluctuations in the SSX has been conducted, including magnetic field, density and Mach flow fluctuations. Using a wavelet transform method to decompose the timeseries signal, the magnetic field fluctuation spectra can be broken into portions that are parallel or perpendicular to the local magnetic field vector. Analysis of these portions show that parallel fluctuation power decreases slightly faster than that for perpendicular fluctuations generating a separating in power as a function of increasing frequency. This effect in frequency space is very close to the observation of variance anisotropy seen in wavenumber space in solar wind turbulence~\cite{kiyani13}. The ratio is shown to grow from nearly isotropic levels in the energy injection scale to a maximum $\perp/\parallel$ ratio of 3 at frequencies of about 1MHz. Beyond this point, the ratio begins to contract reaching isotropy around 10MHz. Though the axial flow speeds of the plasma in the wind-tunnel sub-Mach, if a Taylor hypothesis were still invoked this peak in the ratio would correspond to the ion inertial scale length. 
 
 Since density and mach fluctuations timeseries are also recorded, comparisons amongst these spectra are also reported. Comparison of Mach number fluctuation spectra (as a proxy for flow) to magnetic spectra in the lowest frequencies suggests that energy injection into the turbulent spectra is primarily magnetic. This result is consistent with the nature of the spheromak generation process. Also the indices of density and magnetic spectra appear to diverge at a scale consistent with the ion inertial length and also where anisotropy is found to decrease. Both results would be consistent with an increase in compressibility of the plasma due to ion scale physics. However, firm conclusions are not made as noise issues in the density and flow diagnostics at that scale may be a factor.
 
@@ -146,7 +146,7 @@ Each dischrage of the plasma gun constitutes an experimental shot and typically 
 
 An ensemble average for each helicity state is constructed from 40 shots.
 
-\section{Analysis Techniques}
+\section{Analysis Techniques}\label{sec:analysis}
 
 The bulk of the data of this paper is analyzed in frequency space using either a Wavelet transform method~\cite{torrence98} or a traditional Fast-Fourier Transform (FFT). Timeseries data transformed using a sixth-order Morlet mother wavelet with 256 logarithm scale steps per octave. For magnetic fluctuations, the wavelet transform is applied directly to the $\dot{B}(t)$ data from the pickup coils, separately for each orthogonal component, $x$. Each shot contains 8192 timesteps and the transform is applied to the entire shot to yield an $W_{x}(f,t)$. A known conversion factor is applied transform the wavelet scales into Fourier frequencies. Then, the transform is summed over the time range of interest, typically 40-60$\mu s$. Then, the transforms are divided through by the square of the frequency to yield,
 \begin{equation}
@@ -164,15 +164,15 @@ The method for conversion of the magnetic fluctuation spectra from $\vec{B} = (B
 
 \section{Variance Anisotropy}\label{sec:variance}
 
-The magnetic field fluctuation spectra perpendicular and parallel to the local magnetic field vector is shown in figure~\cite{fig:spectra}(a) averaged over 40 shots and the inner four probe tips. Like previously reported magnetic spectra~\cite{schaffner14}, both perpendicular and parallel curves exhibit power-law like behavior for most frequencies between 10kHz and 10MHz. Fits can be made to various sections of the curve using a Maximum Likelihood Estimation method~\cite{clauset09}; the short fits show that the scaling appears to gradually change from spectral indices of about 1 in the injection (or outer) range and from about 2.5 to 5 in the remaining sections. As has been noted before, with the exception of the injection range slope, the inertial and possibly dissipation range spectral indices are steeper than observed in solar wind turbulence spectra.
-
 \begin{figure}[!htbp]
 \centerline{
 \includegraphics[width=8.5cm]{Bperppara_chan1t4_1mWbspectra_40t60us_wAsymRatio}}
 \caption{\label{fig:spectra}}
 \end{figure}
 
-However, the separation between perpendicular and parallel spectra proceed in a manner similar to that found in space. Both perpendicular fluctuations (red) and parallel fluctuations (blue) begin at roughly the same magnitude in power. Beyond 20kHz, though, the parallel curve dips down slightly faster than the perpendicular and this trend continues up to about 500kHz. Then the separation begins to decrease and approaches a constant value from 5MHz to the Nyquist limit of 32MHz. This gradual change as a function of frequency is more clearly observed in figure ~\ref{fig:spectra}(b) plotted in log-linear format, which provides the ratio of the two curves in figure~\ref{fig:specta}(a). Since the fluctuations perpendicular to the B-field have two component directions while parallel fluctuations have only one, the point of isotropy, or equal fluctuations in all three components) occurs when the ratio of perpendicular to parallel equal to 2. Isotropy is indicated in figure~\ref{fig:spectra}(b) by the dashed gray line.
+The magnetic field fluctuation spectra perpendicular and parallel to the local magnetic field vector is shown in figure~\ref{fig:spectra}(a) averaged over 40 shots and the inner four probe tips. Like previously reported magnetic spectra~\cite{schaffner14a}, both perpendicular and parallel curves exhibit power-law like behavior for most frequencies between 10kHz and 10MHz. Fits can be made to various sections of the curve using a Maximum Likelihood Estimation method~\cite{clauset09}; the short fits show that the scaling appears to gradually change from spectral indices of about 1 in the injection (or outer) range and from about 2.5 to 5 in the remaining sections. As has been noted before, with the exception of the injection range slope, the inertial and possibly dissipation range spectral indices are steeper than observed in solar wind turbulence spectra.
+
+However, the separation between perpendicular and parallel spectra proceed in a manner similar to that found in space. Both perpendicular fluctuations (red) and parallel fluctuations (blue) begin at roughly the same magnitude in power. Beyond 20kHz, though, the parallel curve dips down slightly faster than the perpendicular and this trend continues up to about 500kHz. Then the separation begins to decrease and approaches a constant value from 5MHz to the Nyquist limit of 32MHz. This gradual change as a function of frequency is more clearly observed in figure ~\ref{fig:spectra}(b) plotted in log-linear format, which provides the ratio of the two curves in figure~\ref{fig:spectra}(a). Since the fluctuations perpendicular to the B-field have two component directions while parallel fluctuations have only one, the point of isotropy, or equal fluctuations in all three components) occurs when the ratio of perpendicular to parallel equal to 2. Isotropy is indicated in figure~\ref{fig:spectra}(b) by the dashed gray line.
 
 At the lowest frequencies, the balance of power actually tips toward parallel over perpendicular. As the frequency decreases, an thus, presumably, the scale size decreases, the ratio approaches isotropy, then changes over to a dominantly perpendicular power level. The ratio continues to steadily increase reaching a peak of about 3 at about 500kHz. There is a brief dip before the ratio rises again at about 1.5MHz; at this point, the ratio begins to drop steadily, and approaches an isotropic level at about 5MHz. 
 
@@ -180,7 +180,7 @@ The scale dependency of the 1.0mWb data can be compared to other helicity levels
 
 \begin{figure}[!htbp]
 \centerline{
-\includegraphics[width=8.5cm]{mag_compressibility_preliminary_chan1t4_wratio_wfit}}
+\includegraphics[width=8.5cm]{mag_compressibility_0helchan1t4prelim_1helchan1t6Kiydef_wratio_wfit}}
 \caption{\label{fig:fitratio}}
 \end{figure}
 
@@ -190,7 +190,35 @@ The scale dependency of the 1.0mWb data can be compared to other helicity levels
 \caption{\label{fig:timeratio}}
 \end{figure}
 
-Fits to both the spectra and the ratio are shown in figure~\ref{fig:spectra}. In figure~\ref{fig:spectra}(a), fits are made to four sections of each curve. The spectral indices, error and range of fit for both parallel and perpendicular spectra are shown in the table below. Overall, the spectral indicies are anisotropy; for each section fit, the parallel slope is consistently steeper than the perpendicular slope. This difference is also reflected in the fit shown in figure~\ref{fig:fitratio}. An index of $\alpha = 0.35$ indicates that the ratio scales like $f^{1/3}$ for the region between 10kHz and 500kHz.
+Fits to both the spectra and the ratio are shown in figure~\ref{fig:spectra}. In figure~\ref{fig:spectra}(a), fits are made to four sections of each curve. The spectral indices, error and range of fit for both parallel and perpendicular spectra are shown in the table below. Overall, the spectral indicies are anisotropy; for each section fit, the parallel slope is consistently steeper than the perpendicular slope. This difference is also reflected in the fit shown in figure~\ref{fig:fitratio}(a). An index of $\alpha = 0.35$ indicates that the ratio scales like $f^{1/3}$ for the region between 10kHz and 500kHz.
+
+\begin{table}
+\caption{\label{tab:Bindices}Indices from MLE power-law fits of magnetic fluctuation spectra in Figure~\ref{fig:spectra}.}
+\begin{tabular}{cccc}
+\toprule
+Fit Range[MHz]	&	Direction		&	Index	&Error\\
+\hline
+0.01-0.1				& $\parallel$	& 1.27	&0.07\\
+								& $\perp$			& 1.05  &0.07\\
+\hline
+0.07-0.3				& $\parallel$	& 2.66	&0.14\\
+								& $\perp$			& 2.33  &0.13\\
+\hline
+0.3-1.0					& $\parallel$	& 3.22	&0.19\\
+								& $\perp$			& 3.00  &0.18\\
+\hline
+1.5-10					& $\parallel$	& 4.91	&0.19\\
+								& $\perp$			& 5.19  &0.20\\
+\hline
+\end{tabular}
+\end{table}
+
+An alternate presentation of this ratio is shown in figure~\ref{fig:fitratio}(b), where the ratio of perpendicular and parallel fluctuation power is cast in terms of magnetic compressibility~\cite{kiyani13},
+\begin{equation}
+C_{\parallel}(f) = \frac{1}{N}\sum^{N}_{j=1}\frac{B_{\parallel}(t_{j},f)}{B_{\parallel}(t_{j},f)+B_{\perp}(t_{j},f)}
+\label{eq:magcompress}
+\end{equation}
+which relates the anisotropy to the characteristic stiffness of the magnetic field structure. Note the ratio between parallel and total is taken before the Wavelet spectra are summed over the time range with this definition while the pure ratio shown in previous figure is taken after integration over time. This metric can be used to help unravel the nature of the fluctuations~\cite{tenbarge12,kiyani13}.
 
 An evolution of the anisotropy over time is also observed. Figure~\ref{fig:timeratio}(a) and (b) shows the change of the anisotropy ratio as a function of time ranges of 10$\mu s$ intervals(a) and 20$\mu s$ intervals(b). The black curve in figure~\ref{fig:timeratio} shows a period of time, 30-40$\mu s$, just as the plasma is reaching the midplane probe. The curve remains near isotropic levels for most of the frequencies. As time increases in 10$\mu s$ intervals, the perpendicular power clearly increases in the 100kHz to 1MHz range, while decreases in the 10-100kHz range. The actually peaks highest in the time frame just beyond the main analysis period shown in figure~\ref{fig:spectra}(b). These trends demonstrate that the anisotropy increases as more time is allowed for the turbulence to evolve. Figure~\ref{fig:timeratio}(b), shows that after energy is no longer being injected to maintain the turbulence, the anisotropy decreases. After 100$\mu s$, the magnetic field fluctuations have return to isotropy.
 
@@ -200,7 +228,7 @@ For a turbulence cascade to develop, a system needs both energy injection and en
 
 \begin{figure}[!htbp]
 \centerline{
-\includegraphics[width=8.5cm]{BvsFlowspec_2fluxes_separateplots_40t60us}}
+\includegraphics[width=8.5cm]{BvsFlowvsDensspec_2fluxes_separateplots_40t60us}}
 \caption{\label{fig:BvsFlow}}
 \end{figure}
 
@@ -208,11 +236,29 @@ Comparison of the blue and purple curves in Figure~\ref{fig:BvsFlow}(a) show the
 
 \begin{figure}[!htbp]
 \centerline{
-\includegraphics[width=8.5cm]{BvsFlowvsDensspec_wFits_40t60us}}
+\includegraphics[width=8.5cm]{BvsFlowspec_wFits_40t60us}}
 \caption{\label{fig:BvsFlow_wFits}}
 \end{figure}
 
 This can be seen quantitatively in Figure~\ref{fig:BvsFlow_wFits} which puts the high field magnetic and velocity fluctuation spectra on the same relative scale. The velocity spectra scales like $f^{-1}$ about to about 200kHz, a scaling which is typical for injection range turbulence. Meanwhile, the magnetic spectra is steeper, which implies that some of the magnetic energy may be going to drive flows, though the exact mechanism of this energy transfer is not known and its study is reserved for later work.
+
+\begin{table}
+\caption{\label{tab:Bindices}Indices from MLE power-law fits of magnetic and Mach number fluctuation spectra in Figure~\ref{fig:BvsFlow_wFits}.}
+\begin{tabular}{cccc}
+\toprule
+Fit Range[MHz]	&	Parameter		&	Index	&Error\\
+\hline
+0.05-0.2				& $M_{z}$			& 1.03	&0.12\\
+								& $B_{\perp}$	& 2.03  &0.13\\
+\hline
+0.3-1.0					& $M_{z}$			& 2.70	&0.17\\
+								& $B_{\perp}$	& 3.00  &0.18\\
+\hline
+2.0-10					& $M_{z}$			& 2.10	&0.11\\
+								& $B_{\perp}$	& 5.17  &0.21\\
+\hline
+\end{tabular}
+\end{table}
 
 Beyond 200kHz, the velocity fluctuations scaling steepens suggesting an inertial range scale. The B-field steepens further as well. Beyond, 2MHz, the B-field scaling drops off significantly while the velocity spectra scaling actually slightly increases. This is possibly due to a dissipation mechanism that may be further tapping magnetic energy, and given the increase in velocity spectra scaling, even further adding to velocity fluctuation energy. It may, however, also be due to the frequency of response of the Mach probe itself. Alternative velocity fluctuation measurements are being considered (i.e. electric field fluctuations) for future runs for comparison.
 
@@ -240,7 +286,7 @@ Figure~\ref{fig:wavenumber_spectra} shows the wavenumber power spectrum for thre
 
 The wavenumber spectra and frequency spectra can be directly compared by invoking the Taylor hypothesis for the frequency spectra and Doppler-shifting the frequency spectra by the bulk plasma velocity,
 \begin{equation}
-B(f) \longrightarrow B(f-kV_{p}) \longrightarrow {V_{p}B(k)
+B(f) \longrightarrow B(f-kV_{p}) \longrightarrow V_{p}B(k)
 \label{eq:Taylor_Hyp}
 \end{equation}
 
@@ -257,6 +303,20 @@ Timeseries of quantities in 3mm spheres approximately 1cm off the central axis a
 \includegraphics[width=8.5cm]{Anisotropy_simulation_comparison}}
 \caption{\label{fig:aniso_comp}}
 \end{figure}
+
+\begin{table}
+\caption{\label{tab:Bindices}Indices from MLE power-law fits of magnetic fluctuation spectra from experiment and simulation in Figure~\ref{fig:aniso_comp}.}
+\begin{tabular}{cccc}
+\toprule
+Fit Range[MHz]	&	Parameter						&	Index	&Error\\
+\hline
+0.1-1.0					& Sim:$B_{\parallel}$	& 3.22	&0.11\\
+								& Sim:$B_{\perp}$			& 3.26  &0.11\\
+								& Exp:$B_{\parallel}$	& 2.91	&0.10\\
+								& Exp:$B_{\perp}$			& 2.72  &0.10\\
+\hline
+\end{tabular}
+\end{table}
 
 The simulation timeseries data is analyzed in a similar was the the experimental data with the exception that the mother wavelet used for the wavelet transform of the simulation data is a fourth-order Paul rather than a sixth-order Morlet, in order to better capture time resolution for the lesser sampled simulation. A variance anisotropy analysis is conducted in the same manner as well using a local magnetic field and the projection method. Figure~\ref{fig:aniso_comp}(a) shows simulation decomposition into perpendicular and parallel spectra compared to experimental spectra using the 1.0mWb stuffing data. The simulation and experimental spectra are staggered placed on the y-axis to emphasize features of the shape. Clearly, the simulation data exhibits growing variance anisotropy with increasing frequency. The slopes of the simulation spectra match qualitatively well in the region of 100kHz to 1MHz, though the fit spectra indices indicate a slightly steeper slope than the experiment. The high frequency end of the simulation spectra drops in power faster than the experiment, likely due to the limits in time resolution.
 
@@ -449,6 +509,8 @@ As a check, the total fluctuation power spectrum is computed in three different 
 
 \subsection{Wavelet vs. FFT}
 
+Figure~\ref{fig:WavevsFFT} demonstrates the correspondance between magnetic fluctuation spectra using the Wavelet analysis discussed in Section~\ref{sec:analysis} and a traditional Fast Fourier Transform. The red curves in both Fig~\ref{fig:WavevsFFT}(a) and (b) are the Wavelet generated spectra for the zero and non-zero helicity states respectively. The gray curves show a Fourier transform generated spectra for only the 40-60$\mu s$ range of each shot. Clearly, the overall shape between the two sets of curves is nearly identical. Deviations occur at low frequencies where the Wavelet transform can sample slightly lower frequencies since the analysis uses the entire time range rather than a time subset. The nature of the Wavelet transform also allows for higher resolution binning especially at these lower frequencies. The Wavelet transform, especially with the particular mother wavelet used---Morlet---tends to cause some smoothing in frequency space compared with the FFT. This is clearly seen at higher frequencies as a modes around 10MHz are more clearly observed in the FFT curver than the wavelet. However, for this particular dataset, these modes are not pertinent as they are caused by characteristics of the gun system and not by turbulence physics.
+
 \begin{figure}[!htbp]
 \centerline{
 \includegraphics[width=8.5cm]{Bperppara_chan1t4_WaveletvsFFT_40t60us}}
@@ -463,7 +525,7 @@ As a check, the total fluctuation power spectrum is computed in three different 
 \caption{\label{fig:globalcomparison}}
 \end{figure}
 
-The use of a temporally local versus global magnetic field in anisotropy analysis in the solar wind has been often debated~\cite{podesta09,matthaeus12}. In this paper, a local magnetic field reference vector has been used, but a relative global field can also be used to establish anisotropy. Since the experimental data is extracted on a shot-by-shot basis, the global field in this case is the mean field for the time duration of each shot. Figure~\ref{fig:globalcomparison} shows the anisotropy ratio for local field (reference vector at each timestep) and global field (mean field for each shot). While the local field yields a ratio that is slightly higher than for the global, the trend as a function of frequency is clearly similar. This suggests that though the use of a global versus local field may modify the exact numerical relationship, an anisotropy trend can be observed in either case if it is present in the plasma.
+The use of a temporally local versus global magnetic field in anisotropy analysis in the solar wind has been often debated~\cite{podesta09,matthaeus12}. In this paper, a local magnetic field reference vector has been used, but a relative global field can also be used to establish anisotropy. Since the experimental data is extracted on a shot-by-shot basis, the global field in this case is the mean field for the time duration of each shot. Figure~\ref{fig:globalcomparison} shows the anisotropy ratio for local field (reference vector at each timestep) and global field (mean field for each shot). While the local field yields a ratio that is slightly higher than for the global, the trend as a function of frequency is clearly similar. This comparison can be extended to the FFT analysis which typically would not be useful for a variance analysis technique because it does not have the time resolution that the Wavelet transform does. However, since the magnetic field does not change to quickly in these plasmas, a mean field can be chosen for each shot and then used to project the full FFT spectra generated for each shot. The green curve shows this ratio, which while not as distinct as the wavelet generated ratio, nevertheless shows a similar trend especially in the kHz to MHz range. These results all suggest that though the use of a global versus local field may modify the exact numerical relationship, an anisotropy trend can be observed in either case if it is present in the plasma.
 % ----------------------------------------------------------------
 \section*{Acknowledgements}
 %  We gratefully acknowledge many useful discussions with William Matthaeus. This work has been funded by the US DoE Experimental Plasma Research program and the National Science Foundation.  The simulations were performed using the advanced computing resources (Cray XC30 Edison system) at the National Energy Research Scientific Computing Center.
@@ -493,7 +555,11 @@ The use of a temporally local versus global magnetic field in anisotropy analysi
 
 \bibitem{schaffner14b} D.A. Schaffner {\it et al.} Observation of turbulent intermittency scaling with magnetic helicity in an MHD plasma wind-tunnel. Submitted to PRL? Feb 2014.
 
+\bibitem{kiyani13} K.H. Kiyani, S.C. Chapman, F. Sahraoui, B. Hnat, O. Fauvarque, and Yu.V. Khotyainsev. Enhanced Magnetic Compressibility and Isotropic Scale Invariance at Sub-Ion Larmor Scales in Solar Wind Turbulence. ApJ. {\bf 763} 10 (2013).
+
 \bibitem{clauset09}A. Clauset, C. Rohilla Shalizi, M.E.J. Newman, Power-law distributions in empirical data, SIAM Rev. {\bf 51}, 661703 (2009).
+
+\bibitem{tenbarge12} J.M. TenBarge, J.J. Podesta, K.G. Klein and G.G. Howes. Interpreting Magnetic Variance Anisotropy Measurements in the Solar Wind. ApJ. {\bf 753} 107 (2012).
 
 \bibitem{roberts10}D. Aaron Roberts. Evolution of the spectrum of solar wind velocity fluctuations from 0.3 to 5 AU. JGR. {\bf 115}, A12 (2010).
 
