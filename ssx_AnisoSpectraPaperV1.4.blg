@@ -7,15 +7,23 @@ Warning--I didn't find a database entry for "podesta07"
 Warning--I didn't find a database entry for "alexandrova09"
 Warning--I didn't find a database entry for "sahraoui09"
 Warning--I didn't find a database entry for "horbury12"
+Warning--I didn't find a database entry for "belcher71"
+Warning--I didn't find a database entry for "smith06"
 Warning--I didn't find a database entry for "harmon05"
 Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "robinson71"
 Warning--I didn't find a database entry for "howes12a"
 Warning--I didn't find a database entry for "ren11"
 Warning--I didn't find a database entry for "schaffner14a"
 Warning--I didn't find a database entry for "schaffner14b"
 Warning--I didn't find a database entry for "kiyani13"
+Warning--I didn't find a database entry for "sahraoui10"
+Warning--I didn't find a database entry for "barnes86"
+Warning--I didn't find a database entry for "jarboe93"
+Warning--I didn't find a database entry for "taylor86"
 Warning--I didn't find a database entry for "torrence98"
 Warning--I didn't find a database entry for "clauset09"
+Warning--I didn't find a database entry for "sarkar14"
 Warning--I didn't find a database entry for "tenbarge12"
 Warning--I didn't find a database entry for "roberts10"
 Warning--I didn't find a database entry for "klein12"
@@ -32,4 +40,4 @@ Control: production of article title (0) allowed
 Control: page (1) range
 Control: year (1) truncated
 Control: production of eprint (0) enabled
-(There were 21 warnings)
+(There were 29 warnings)
