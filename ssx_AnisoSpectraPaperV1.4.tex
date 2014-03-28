@@ -210,9 +210,7 @@ $f_{\rho i} [MHz]$&20&3.3\\
 \end{tabular}
 \end{table}
 
-Each discharge of the plasma gun constitutes an experimental shot and typically lasts for about 120$\mu s$ from formation of the magnetic fields to their eventual resistive dissipation. The turbulence data reported here is extracted from a time range of 40 to 60$\mu s$. This is the epoch during each shot where the fluctuations are most stationary; energy at the probe location is balanced between injection energy from the gun and loss through advection away from the probe and through possible dissipation mechanisms (including resistive decay of the currents).
-
-An ensemble average for each helicity state is constructed from 40 shots.
+Each discharge of the plasma gun constitutes an experimental shot and typically lasts for about 120$\mu s$ from formation of the magnetic fields to their eventual resistive dissipation. The turbulence data reported here is extracted from a time range of 40 to 60$\mu s$. This is the epoch during each shot where the fluctuations are most stationary; energy at the probe location is balanced between injection energy from the gun and loss through advection away from the probe and through possible dissipation mechanisms (including resistive decay of the currents). An ensemble average for each helicity state is constructed from 40 shots.
 
 \section{Analysis Techniques}\label{sec:analysis}
 
@@ -283,9 +281,11 @@ An alternate presentation of this ratio is shown in figure~\ref{fig:fitratio}(b)
 C_{\parallel}(f) = \frac{1}{N}\sum^{N}_{j=1}\frac{B_{\parallel}(t_{j},f)}{B_{\parallel}(t_{j},f)+B_{\perp}(t_{j},f)}
 \label{eq:magcompress}
 \end{equation}
-which relates the anisotropy to the characteristic stiffness of the magnetic field structure. Note the ratio between parallel and total is taken before the Wavelet spectra are summed over the time range with this definition while the pure ratio shown in previous figure is taken after integration over time. This metric can be used to help unravel the nature of the fluctuations~\cite{tenbarge12,kiyani13}.
+which relates the anisotropy to the characteristic stiffness of the magnetic field structure. Note the ratio between parallel and total is taken before the Wavelet spectra are summed over the time range with this definition while the pure ratio shown in previous figure is taken after integration over time.
 
 An evolution of the anisotropy over time is also observed. Figure~\ref{fig:timeratio}(a) and (b) shows the change of the anisotropy ratio as a function of time ranges of 20$\mu s$ intervals(a) and 10$\mu s$ intervals(b). The black curve in figure~\ref{fig:timeratio}(b) shows a period of time, 30-40$\mu s$, just as the plasma is reaching the midplane probe. The curve remains near isotropic levels for most of the frequencies. As the time frame increases in 10$\mu s$ intervals, the perpendicular power clearly increases in the 100kHz to 3MHz range. The ratio actually peaks highest in the time frame just beyond the main analysis period shown in figure~\ref{fig:spectra}(b). These trends perhaps demonstrate that the anisotropy increases as more time is allowed for the turbulence to evolve. Figure~\ref{fig:timeratio}(a), shows that after energy is no longer being injected to maintain the turbulence, the anisotropy decreases. After 100$\mu s$ (red curve), the magnetic field fluctuations have returned to an isotropic ratio.
+
+Some MHD turbulent theories anticipate the ratio of perpendicular fluctuations to parallel fluctuations to increase as a function of decreasing scale size at a particular rate~\cite{goldreich95,boldyrev06}. The scaling of $f^{0.34}$ observed in Figure~\ref{fig:magcompress}(a) compares very well to the theoretical prediction of $B_{\perp}(k)/B_{\parallel}(k) \sim k^{1/3}$ but only if the Taylor Hypothesis can be fully implemented. The temporal evolution in Figure~\ref{fig:timeratio}(b) also suggests an increase in anistropy as the turbulence is given more time to develop. The overall change in anisotropy as a function of frequency (or conversely, the change in magnetic compressibility) can be compared to theories which connect back to the type of fluctuations that may be present in the plasma~\cite{tenbarge12,kiyani13}. Such theories also motivate the comparison between different parameters (such as magnetic and density fluctuations) which can further illuminate the nature of the fluctuations~\cite{klein12} and as such, will be discussed in the next sections.
 
 \section{Flow and Density Spectra}\label{sec:flowdens}
 
@@ -622,7 +622,7 @@ The use of a temporally local versus global magnetic field in anisotropy analysi
 
 \bibitem{jarboe93}T.R. Jarboe. Review of Spheromak Research. Plasma Phys. Cont. Fus. {\bf 36} 945 (1994).
 
-\bibitem{Taylor86} J. B. Taylor, Rev. Mod. Phys. {\bf 58}, 741 (1986).
+\bibitem{taylor86} J. B. Taylor, Rev. Mod. Phys. {\bf 58}, 741 (1986).
 
 \bibitem{clauset09}A. Clauset, C. Rohilla Shalizi, M.E.J. Newman, Power-law distributions in empirical data, SIAM Rev. {\bf 51}, 661703 (2009).
 
@@ -633,8 +633,6 @@ The use of a temporally local versus global magnetic field in anisotropy analysi
 \bibitem{roberts10}D. Aaron Roberts. Evolution of the spectrum of solar wind velocity fluctuations from 0.3 to 5 AU. JGR. {\bf 115}, A12 (2010).
 
 \bibitem{hamilton08} K. Hamilton, C.W. Smith, B.J. Vasquez and R.J. Leamon. Anistropies and helicities in the solar wind intertial and dissipation ranges at 1 AU. J. Geophys. Res. {\bf 113} A01106 (2008).
-
-\bibitem{podesta09}J.J. Podesta. Dependence of Solar-Wind Power Spectra on the Direction of the Local Mean Magnetic Field. ApJ. {\bf 698}, 986-999 (2009).
 
 \bibitem{matthaeus12}W.H. Matthaeus, S. Servidio, P. Dmitruk, V. Carbone, S. Oughton, M. Wan and K.T. Osman. Local Anisotropy, Higher Order Statistics and Turbulence Spectra. ApJ. {\bf 750}, 103 (2012).
 
