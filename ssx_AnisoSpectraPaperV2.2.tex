@@ -8,11 +8,11 @@
 
 %% manuscript produces a one-column, double-spaced document:
 
-%%\documentclass[manuscript]{aastex}
+\documentclass[manuscript]{aastex}
 
 %% preprint2 produces a double-column, single-spaced document:
 
-\documentclass[preprint2]{aastex}
+%%\documentclass[preprint2]{aastex}
 
 %% Sometimes a paper's abstract is too long to fit on the
 %% title page in preprint2 mode. When that is the case,
@@ -34,7 +34,7 @@
 
 %% You can insert a short comment on the title page using the command below.
 
-\slugcomment{Not to appear in Nonlearned J., 45.}
+%%\slugcomment{Not to appear in Nonlearned J., 45.}
 
 %% If you wish, you may supply running head information, although
 %% this information may be modified by the editorial offices.
@@ -43,8 +43,8 @@
 %% head is a modified title of up to roughly 44 characters.
 %% Running heads will not print in the manuscript style.
 
-\shorttitle{Collapsed Cores in Globular Clusters}
-\shortauthors{Djorgovski et al.}
+%%\shorttitle{Collapsed Cores in Globular Clusters}
+%%\shortauthors{Djorgovski et al.}
 
 %% This is the end of the preamble.  Indicate the beginning of the
 %% paper itself with \begin{document}.
@@ -83,10 +83,10 @@
 \affil{Space Science Division, Naval Research Laboratory, Washington, DC, USA}
 
 \begin{abstract}
-The nature of MHD turbulence is analyzed through both temporal and spatial magnetic fluctuation spectra. A magnetically turbulent plasma is produced in the MHD wind-tunnel configuration of the Swarthmore Spheromak Experiment (SSX). The power of magnetic fluctuations is projected into directions perpendicular and parallel to a local mean field; the ratio of these quantities shows the presence of variance anisotropy which varies as a function of frequency. Comparison amongst magnetic, velocity, and density spectra are also made, demonstrating that the energy of the turbulence observed is primarily seeded by magnetic fields created during plasma production. Direct spatial spectra are constructed using multi-channel diagnostics and are used to compare to frequency spectra converted to spatial scales using the Taylor Hypothesis. Evidence for the observation of dissipation due to ion inertial length scale physics is also discussed as well as the role laboratory experiment can play in understanding turbulence typically studied in space settings such as the solar wind. Finally, all turbulence results are shown to compare fairly well to a Hall-MHD simulation of the experiment. 
+The nature of magnetohydrodynamic (MHD) turbulence is analyzed through both temporal and spatial magnetic fluctuation spectra. A magnetically turbulent plasma is produced in the MHD wind-tunnel configuration of the Swarthmore Spheromak Experiment (SSX). The power of magnetic fluctuations is projected into directions perpendicular and parallel to a local mean field; the ratio of these quantities shows the presence of variance anisotropy which varies as a function of frequency. Comparison amongst magnetic, velocity, and density spectra are also made, demonstrating that the energy of the turbulence observed is primarily seeded by magnetic fields created during plasma production. Direct spatial spectra are constructed using multi-channel diagnostics and are used to compare to frequency spectra converted to spatial scales using the Taylor Hypothesis. Evidence for the observation of dissipation due to ion inertial length scale physics is also discussed as well as the role laboratory experiment can play in understanding turbulence typically studied in space settings such as the solar wind. Finally, all turbulence results are shown to compare fairly well to a Hall-MHD simulation of the experiment. 
 \end{abstract}
 
-\keywords{plasma}
+\keywords{plasmas,MHD,turbulence,methods: laboratory}
 
 \section{Introduction}
 
@@ -96,7 +96,7 @@ As instrumentation capabilities on spacecraft have steadily improved, focus in s
 
 Analysis of timeseries fluctuations in the guise of spectrum analysis has served as the foundation for plasma turbulence research, particularly in the solar wind~\citep{gol95,tum95}. Improving instrumentation has led to ever greater precision in measurements of spectral indices for both magnetic and velocity fluctuation spectra~\citep{pod07}, as well as increasing resolution of scale, allowing for measurements of spectra of sub-ion and electron scale fluctuations~\citep{yor08,ale09,sah09,che13}. However, many outstanding questions regarding the nature of this turbulence, including both injection and dissipation mechanisms, have prompted research beyond typical spectral analysis. Two such avenues have been the exploration of the anisotropic nature of the turbulence and comparison of spectra between different observables (i.e. magnetic versus density fluctuations).
 
-Theoretical treatments of magnetized plasma turbulence have almost universally predicted anisotropy to develop based on directions perpendicular and parallel to a mean field vector~\citep{mon81,mat90,sri95,zho04,bol06}; many forms of this anisotropy have been predicted and observed~\citep{das05,hor08,pod09,per09,wic10,he11} (a good overview of the various types and definitions of anisotropy is given in \citet{hor12}. Since the solar wind is super-Alfvenic, anisotropy studies of solar wind turbulence generally reference the velocity vector of the bulk flow when defining perpendicular versus parallel fluctuations---typically resulting in a wavenumber anisotropy measurement. Instead, this paper focuses on variance anisotropy---the unequal ratio of magnetic fluctuation power in components perpendicular versus parallel to the mean magnetic field~\citep{bel71,smi06}.
+Theoretical treatments of magnetized plasma turbulence have almost universally predicted anisotropy to develop based on directions perpendicular and parallel to a mean field vector~\citep{mon81,mat90,sri95,zho04,bol06}; many forms of this anisotropy have been predicted and observed~\citep{das05,hor08,pod09,per09,wic10,he11}---a good overview of the various types and definitions of anisotropy is given in \citet{hor12}. Since the solar wind is super-Alfvenic, anisotropy studies of solar wind turbulence generally reference the velocity vector of the bulk flow when defining perpendicular versus parallel fluctuations---typically resulting in a wavenumber anisotropy measurement. Instead, this paper focuses on variance anisotropy---the unequal ratio of magnetic fluctuation power in components perpendicular versus parallel to the mean magnetic field~\citep{bel71,smi06}.
 
 Comparison amongst fluctuation spectra (typically magnetic, flow, and density fluctuations) also provide insight into the nature of the turbulence. For example, relative partition of fluctuation energy between magnetic and kinetic can be useful in making determinations of turbulent properties~\citep{pod07}, while comparison of the spectral indices of magnetic and density spectra can provide information about the compressibility of a plasma(e.g., the so-called density bulge~\citep{col89,har05}). Comparison of velocity and magnetic spectra at injection scales can also be used to develop hypotheses on the generating and dissipation mechanisms of the turbulence~\citep{rob10}.
 
@@ -172,7 +172,7 @@ The turbulence data is extracted from magnetic, density and flow measurements du
 \begin{table}
 \begin{center}
 \caption{\label{tab:params}MHD wind tunnel plasma parameters during the equilibrium epoch for the present configuration of SSX for non-zero helicity ($K_{B}\neq 0$) and for zero helicity($K_{B}=0$) states. The table has separate sections for directly measured parameters and for quantities computed from these values.}
-\begin{tabular}{c|cc}
+\begin{tabular}{ccc}
 \tableline\tableline
 Parameter&$K_{B}\neq 0$&$K_{B}=0$\\
 				 &(1.0mWb)             &(0.0mWb)\\
@@ -537,13 +537,13 @@ Figure~\ref{fig:WavevsFFT} demonstrates the correspondance between magnetic fluc
 \begin{figure}
 \epsscale{0.5}
 \plotone{f17_color.eps}
-\caption{\label{fig:globalcomparison} Comparison of the anisotropy ratio for magnetic power spectra constructed when using either a local(blue,pentagons) or global(red,circles) definition of the mean field. The thin green curve shows the anisotropy with a global mean field using an FFT transform rather than wavelet.}
+\caption{\label{fig:globalcomparison} Comparison of the anisotropy ratio for magnetic power spectra constructed when using either a local(blue,squares) or global(red,circles) definition of the mean field. The thin green curve shows the anisotropy with a global mean field using an FFT transform rather than wavelet.}
 \end{figure}
 
 The use of a temporally local versus global magnetic field in anisotropy analysis in the solar wind has been often debated~\citep{pod09,mat12}. In this paper, a local magnetic field reference vector has been used, but a relative global field can also be used to establish anisotropy. Since the experimental data is extracted on a shot-by-shot basis, the global field in this case is the mean field for the time duration of each shot. Figure~\ref{fig:globalcomparison} shows the anisotropy ratio for local field (reference vector at each timestep) and global field (mean field for each shot). While the local field yields a ratio that is slightly higher than for the global, the trend as a function of frequency is clearly similar. This comparison can be extended to the FFT analysis which typically would not be useful for a variance analysis technique because it does not have the time resolution that the wavelet transform does. However, since the magnetic field does not change very quickly in these plasmas, a mean field can be chosen for each shot and then used to project the full FFT spectra generated for each shot. The green curve shows this ratio, which while not as distinct as the wavelet generated ratio, nevertheless shows a similar trend especially in the kHz to MHz range. These results all suggest that though the use of a global versus local field may modify the exact numerical relationship, an anisotropy trend can be observed in either case if it is present in the plasma.
 % ----------------------------------------------------------------
-\section*{Acknowledgements}
-  We gratefully acknowledge many useful discussions with William Matthaeus, Greg Howes, Kris Klein, Robert Wicks, Jason TenBarge and Adrian Wan. This work has been funded by DOE OFES and NSF CMSO.  The simulations were performed using the advanced computing resources (Cray XC30 Edison system) at the National Energy Research Scientific Computing Center.
+\acknowledgements
+We gratefully acknowledge many useful discussions with William Matthaeus, Greg Howes, Kris Klein, Robert Wicks, Jason TenBarge and Adrian Wan. This work has been funded by DOE OFES and NSF CMSO.  The simulations were performed using the advanced computing resources (Cray XC30 Edison system) at the National Energy Research Scientific Computing Center.
 % ----------------------------------------------------------------
 %Universality of Solar Wind Turbulent Spectrum from MHD to Electron Scales
 \begin{thebibliography}{}
